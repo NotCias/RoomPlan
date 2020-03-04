@@ -1,7 +1,7 @@
 Group Project - README Template
 ===
 
-# Chores App
+# RoomPlan App
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -66,7 +66,7 @@ An application that allows users to create groups with others, and create/assign
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/U8dKWfa.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
