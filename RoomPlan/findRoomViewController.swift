@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class findRoomViewController: UIViewController {
 
     @IBOutlet weak var roomCode: UITextField!
@@ -33,5 +33,25 @@ class findRoomViewController: UIViewController {
         performSegue(withIdentifier: "roomDetailsSegue", sender: nil)
     }
     @IBAction func joinRoom(_ sender: Any) {
+        let currentUser = PFUser.current()!
+        var listo : [PFUser] = []
+        listo.append(currentUser)
+        let query = PFQuery(className:"Rooms")
+        query.getObjectInBackground(withId: roomCode.text!) { (room, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let room = room {
+                    room.addUniqueObjects(from: listo, forKey:"users")
+                    room.saveInBackground { (success, error) in
+                        if success{
+                            print("yep")
+                            self.performSegue(withIdentifier: "findRoomSegue", sender: nil)
+                        }else{
+                            print("nope")
+                        }
+                    }
+
+                }
+            }
     }
 }

@@ -7,15 +7,20 @@
 //
 
 import UIKit
-
+import Parse
 class roomCodeViewController: UIViewController {
 
-    @IBOutlet weak var roomCode: UITextField!
+    
+
+    @IBOutlet weak var roomCode: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let roomNum = PFUser.current()?["room"]
+        roomCode.text = roomNum as? String
     }
+
     
     
     /*
@@ -28,4 +33,7 @@ class roomCodeViewController: UIViewController {
     }
     */
 
+    @IBAction func nextScreen(_ sender: Any) {
+        self.performSegue(withIdentifier: "signupHomeSegue", sender: nil)
+    }
 }

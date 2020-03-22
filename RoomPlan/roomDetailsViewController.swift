@@ -37,8 +37,9 @@ class roomDetailsViewController: UIViewController {
         
     @IBAction func createRoom(_ sender: Any) {
         let room = PFObject(className: "Rooms")
-        var users : [PFUser] = []
         var currentUser = PFUser.current()
+        var users : [PFUser] = []
+        users.append(currentUser!)
         room["name"] = roomName.text
         room["users"] = users
     
@@ -47,13 +48,18 @@ class roomDetailsViewController: UIViewController {
             NSLog("Object created with id: \(room.objectId)")
                 currentUser?["room"] = room.objectId
                 print(room.objectId)
-                currentUser?.saveInBackground(block: { (success, error) in
-                    print("hm")
+                currentUser?.saveInBackground(block: { (success1, error1) in
+                    if success1{
+                        self.performSegue(withIdentifier: "roomCreated", sender: nil)
+                        print("hm")
+                    }
+                    
                 })
                 print("yay")
             } else{
                 print("error!")
             }
+        
 }
     
 

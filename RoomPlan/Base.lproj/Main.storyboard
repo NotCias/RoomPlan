@@ -91,47 +91,13 @@
                     <connections>
                         <outlet property="passwordField" destination="SvJ-j2-36p" id="AaW-x8-7OR"/>
                         <outlet property="usernameField" destination="ZEF-KP-55n" id="NNS-LU-3WB"/>
-                        <segue destination="pRn-Bs-B5H" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="bQD-rS-LVq"/>
                         <segue destination="gen-ex-l2a" kind="presentation" identifier="signupSegue" modalPresentationStyle="fullScreen" id="tDV-4M-xA9"/>
+                        <segue destination="MEy-5L-BDq" kind="presentation" identifier="loginHomeSegue" modalPresentationStyle="fullScreen" id="HxQ-V7-W5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="138.98050974512745"/>
-        </scene>
-        <!--Feed View Controller-->
-        <scene sceneID="bol-Kb-bRO">
-            <objects>
-                <viewController id="EVH-T9-FCX" customClass="FeedViewController" customModule="RoomPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GKu-jR-Cja">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="llI-5m-eB7"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="b50-ex-Bm0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="grR-HJ-vIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1759.2" y="138.98050974512745"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6ou-Fo-9Is">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pRn-Bs-B5H" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lt9-in-dqI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EVH-T9-FCX" kind="relationship" relationship="rootViewController" id="QS6-fE-OWa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WJQ-El-5xO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="969" y="139"/>
         </scene>
         <!--Create or Join room-->
         <scene sceneID="xqj-MU-muE">
@@ -214,6 +180,7 @@
                     <connections>
                         <outlet property="roomCode" destination="28n-ie-ZyB" id="EfK-jG-Dcq"/>
                         <segue destination="RNZ-qb-8su" kind="presentation" identifier="roomDetailsSegue" modalPresentationStyle="fullScreen" id="8S8-cl-ddd"/>
+                        <segue destination="MEy-5L-BDq" kind="presentation" identifier="findRoomSegue" modalPresentationStyle="fullScreen" id="w4s-VP-aOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMh-Vo-0jT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -276,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="3112.8000000000002" y="1724.8875562218891"/>
         </scene>
-        <!--Room Code View Controller-->
+        <!--Room Created!-->
         <scene sceneID="tF6-GK-sFo">
             <objects>
                 <viewController id="VRn-a7-ARZ" customClass="roomCodeViewController" customModule="RoomPlan" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,7 +251,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="You have successfully created your room! Share this unique room code with your friends so they can join you as roomates! " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-D0-6Vp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="You have successfully created your room! Share this unique room code with your friends so they can join you as roomates! " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-D0-6Vp">
                                 <rect key="frame" x="42" y="153" width="291" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -292,24 +259,60 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7em-1V-nIh">
-                                <rect key="frame" x="83" y="390" width="193" height="64"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CRe-KR-0M3">
+                                <rect key="frame" x="67" y="363" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6A-ms-vT1">
+                                <rect key="frame" x="151" y="499" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27664238949999997" green="0.70907602560000005" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextScreen:" destination="VRn-a7-ARZ" eventType="touchUpInside" id="QM5-ra-lJj"/>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqb-bp-DdU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3ff-6d-YHm"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4iM-I9-NeH"/>
+                    <navigationItem key="navigationItem" title="Room Created!" id="4iM-I9-NeH"/>
                     <connections>
-                        <outlet property="roomCode" destination="7em-1V-nIh" id="GpP-O7-Klq"/>
+                        <outlet property="roomCode" destination="CRe-KR-0M3" id="DXe-QD-fcM"/>
+                        <segue destination="MEy-5L-BDq" kind="presentation" identifier="signupHomeSegue" modalPresentationStyle="fullScreen" id="e98-dJ-Mno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwa-qz-II8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5010.3999999999996" y="1720.3898050974515"/>
+            <point key="canvasLocation" x="5110" y="1928"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="qp6-yg-wz1">
+            <objects>
+                <viewController id="obL-1r-nnA" customClass="FeedViewController" customModule="RoomPlan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hej-Gw-2kf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Qee-tP-ba3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="oF9-fk-j4H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUD-W9-wcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4319" y="690"/>
         </scene>
         <!--Signup View -->
         <scene sceneID="1mg-zG-4SI">
@@ -323,7 +326,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="Ebf-I6-8G5" kind="relationship" relationship="rootViewController" id="7KT-Bg-BvX"/>
-                        <segue destination="pRn-Bs-B5H" kind="presentation" identifier="goodSignup" id="PZn-ab-9cp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivl-cM-vAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -364,13 +366,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAi-oZ-u8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4071.1999999999998" y="1720.3898050974515"/>
+            <point key="canvasLocation" x="4078" y="1720"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="c2c-6y-lbN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MEy-5L-BDq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="41n-hr-Rek"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H0Y-fh-eoU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="obL-1r-nnA" kind="relationship" relationship="rootViewController" id="RUh-6T-iIP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BB-Ug-JDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3244" y="691"/>
         </scene>
     </scenes>
     <resources>
         <image name="iconfinder_small_house-home_2222747" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PZn-ab-9cp"/>
+        <segue reference="HxQ-V7-W5H"/>
     </inferredMetricsTieBreakers>
 </document>
