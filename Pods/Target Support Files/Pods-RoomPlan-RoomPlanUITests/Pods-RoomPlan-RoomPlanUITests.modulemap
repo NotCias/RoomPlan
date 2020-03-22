@@ -1,0 +1,6 @@
+framework module Pods_RoomPlan_RoomPlanUITests {
+  umbrella header "Pods-RoomPlan-RoomPlanUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
