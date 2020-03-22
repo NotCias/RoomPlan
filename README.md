@@ -86,11 +86,12 @@ Models
 | createdAt	 | DateTime | date when task is created |
 | finishBy	 | DateTime	| date when task is to be completed |
 ### Networking
-(Read/GET) Query all posts where user is author
-let query = PFQuery(className:"Chore")
+- (Read/GET) Query all posts where user is author
+
+```swift let query = PFQuery(className:"Chore")
 query.whereKey("poster", equalTo: currentUser)
 query.order(byDescending: "createdAt")
-query.findObjectsInBackground ```swift
+query.findObjectsInBackground 
 { (posts: [PFObject]?, error: Error?) in
    if let error = error { 
       print(error.localizedDescription)
@@ -98,16 +99,15 @@ query.findObjectsInBackground ```swift
       print("Successfully retrieved \(posts.count) posts.")
   // TODO: Do something with posts...
    }
-}```
-(Create/POST) Create a finishBy datetime
-(Delete) Delete existing Chore
-(Create/POST) Assign new poster object to Chore
-Create Chores Screen
+}
+```
 
-(Create/POST) Create a new Chore object
+- (Create/POST) Create a finishBy datetime
+- (Delete) Delete existing Chore
+- (Create/POST) Assign new poster object to Chore
+- Create Chores Screen
+
+- (Create/POST) Create a new Chore object
 Profile Screen
 
-(Read/GET) Query logged in user object
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
