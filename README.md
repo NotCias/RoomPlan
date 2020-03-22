@@ -75,8 +75,37 @@ An application that allows users to create groups with others, and create/assign
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+Models
+| Property   | Type     | Description |
+| objectId   | String	  | unique id for the user post (default field) |
+| poster	   | String	  | person who posted |
+| Chore      | String   | Description of Task |
+| finished   | Boolean  |	Mark Task as completed |
+| assignedTo | String	  | Name of next person to complete task |
+| createdAt	 | DateTime | date when task is created |
+| finishBy	 | DateTime	| date when task is to be completed |
 ### Networking
+(Read/GET) Query all posts where user is author
+let query = PFQuery(className:"Chore")
+query.whereKey("poster", equalTo: currentUser)
+query.order(byDescending: "createdAt")
+query.findObjectsInBackground '''{ (posts: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let posts = posts {
+      print("Successfully retrieved \(posts.count) posts.")
+  // TODO: Do something with posts...
+   }
+}'''
+(Create/POST) Create a finishBy datetime
+(Delete) Delete existing Chore
+(Create/POST) Assign new poster object to Chore
+Create Chores Screen
+
+(Create/POST) Create a new Chore object
+Profile Screen
+
+(Read/GET) Query logged in user object
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
