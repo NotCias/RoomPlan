@@ -17,6 +17,10 @@ class FeedViewController: UIViewController {
     }
     
 
+    @IBAction func onCreate(_ sender: Any) {
+                        self.performSegue(withIdentifier: "createChoreSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

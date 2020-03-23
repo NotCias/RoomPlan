@@ -308,11 +308,76 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Qee-tP-ba3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="oF9-fk-j4H"/>
+                    <navigationItem key="navigationItem" title="Home" id="oF9-fk-j4H">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sW9-98-eDw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cgm-VO-tWn">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onCreate:" destination="obL-1r-nnA" eventType="touchUpInside" id="zeq-Jl-zew"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="0G1-Ja-MxH" kind="presentation" identifier="createChoreSegue" modalPresentationStyle="fullScreen" id="yNi-wf-BgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUD-W9-wcU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4319" y="690"/>
+            <point key="canvasLocation" x="4282" y="695"/>
+        </scene>
+        <!--Create Chore-->
+        <scene sceneID="GmR-tk-DNd">
+            <objects>
+                <viewController id="rPN-my-cpZ" customClass="CreateChoreViewController" customModule="RoomPlan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pVg-dk-pX8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Chore Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqh-77-71D">
+                                <rect key="frame" x="117" y="214" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTV-nE-nuu">
+                                <rect key="frame" x="60" y="243" width="255" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconfinder_camera_115759" translatesAutoresizingMaskIntoConstraints="NO" id="c7F-cB-Uaq">
+                                <rect key="frame" x="67" y="51" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYh-uo-gux">
+                                <rect key="frame" x="147" y="313" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-ka-RdO">
+                                <rect key="frame" x="60" y="352" width="255" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="d01-1Y-vQf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Chore" id="OGe-QQ-vfT"/>
+                    <connections>
+                        <outlet property="dateField" destination="ke1-ka-RdO" id="h2p-l7-G91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3DB-FC-q16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6192.8000000000002" y="694.90254872563719"/>
         </scene>
         <!--Signup View -->
         <scene sceneID="1mg-zG-4SI">
@@ -387,11 +452,30 @@
             </objects>
             <point key="canvasLocation" x="3244" y="691"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wSM-kn-sqp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0G1-Ja-MxH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VKj-GE-dKc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rPN-my-cpZ" kind="relationship" relationship="rootViewController" id="uZ5-hM-aKz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDT-u7-Qca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5253.6000000000004" y="694.90254872563719"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="iconfinder_camera_115759" width="512" height="512"/>
         <image name="iconfinder_small_house-home_2222747" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HxQ-V7-W5H"/>
+        <segue reference="w4s-VP-aOO"/>
     </inferredMetricsTieBreakers>
 </document>
