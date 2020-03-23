@@ -22,6 +22,7 @@
 		6EB2D9C82427275D0059FF39 /* roomDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2D9C72427275D0059FF39 /* roomDetailsViewController.swift */; };
 		6EB2D9CA242749DE0059FF39 /* roomCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2D9C9242749DE0059FF39 /* roomCodeViewController.swift */; };
 		6EEC5BAA2428691E0033D3F5 /* CreateChoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC5BA92428691E0033D3F5 /* CreateChoreViewController.swift */; };
+		6EEC5BAC24287C770033D3F5 /* ChoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC5BAB24287C770033D3F5 /* ChoreCell.swift */; };
 		90B5863DD738B777D241F334 /* Pods_RoomPlanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0189CE688C5B46DB05F49181 /* Pods_RoomPlanTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		6EB2D9C72427275D0059FF39 /* roomDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomDetailsViewController.swift; sourceTree = "<group>"; };
 		6EB2D9C9242749DE0059FF39 /* roomCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomCodeViewController.swift; sourceTree = "<group>"; };
 		6EEC5BA92428691E0033D3F5 /* CreateChoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChoreViewController.swift; sourceTree = "<group>"; };
+		6EEC5BAB24287C770033D3F5 /* ChoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreCell.swift; sourceTree = "<group>"; };
 		8D594C45596204BAE75C6C36 /* Pods-RoomPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomPlan.debug.xcconfig"; path = "Target Support Files/Pods-RoomPlan/Pods-RoomPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E6F289ABC12728875A14E8 /* Pods-RoomPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomPlan.release.xcconfig"; path = "Target Support Files/Pods-RoomPlan/Pods-RoomPlan.release.xcconfig"; sourceTree = "<group>"; };
 		DDBEFB3343B522B5DBC42E12 /* Pods-RoomPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomPlanTests.release.xcconfig"; path = "Target Support Files/Pods-RoomPlanTests/Pods-RoomPlanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				6E3E77182425C9DC00A6FDB6 /* AppDelegate.swift */,
 				6E3E771A2425C9DC00A6FDB6 /* SceneDelegate.swift */,
 				6E3E771E2425C9DC00A6FDB6 /* Main.storyboard */,
+				6EEC5BAB24287C770033D3F5 /* ChoreCell.swift */,
 				6EEC5BA92428691E0033D3F5 /* CreateChoreViewController.swift */,
 				6EB2D9C9242749DE0059FF39 /* roomCodeViewController.swift */,
 				6EB2D9C72427275D0059FF39 /* roomDetailsViewController.swift */,
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB2D9C22426EDE30059FF39 /* LoginViewController.swift in Sources */,
+				6EEC5BAC24287C770033D3F5 /* ChoreCell.swift in Sources */,
 				6E3E77192425C9DC00A6FDB6 /* AppDelegate.swift in Sources */,
 				6EB2D9C42426EF320059FF39 /* FeedViewController.swift in Sources */,
 				6E3E771B2425C9DC00A6FDB6 /* SceneDelegate.swift in Sources */,

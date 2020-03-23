@@ -77,7 +77,7 @@ class CreateChoreViewController: UIViewController, UIImagePickerControllerDelega
         chore["name"] = nameField.text
         chore["owner"] = PFUser.current()!
         chore["date"] = dateField.text
-        
+        chore["description"] = descText.text
         let imageData = imageView.image!.pngData()
         let file = PFFileObject(data: imageData!)
         
