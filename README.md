@@ -15,13 +15,13 @@ An application that allows users to create groups with others, and create/assign
 
 ### Gif Walkthrough
 
-**Sign up/ Create a room/ Assign a Chore**
+#### Sign up/ Create a room/ Assign a Chore
 <img src="http://g.recordit.co/kfAX0s4YwP.gif" width=250><br>
 
-**Sign up/ Join a room**
+#### Sign up/ Join a room
 <img src="http://g.recordit.co/qHQQIYQa0s.gif" width=250><br>
 
-**Create Chore after logging in**
+#### Create Chore after logging in
 <img src="http://g.recordit.co/JqtGrYXnDJ.gif" width=250><br>
 
 
