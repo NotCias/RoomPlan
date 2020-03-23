@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import AlamofireImage
+import Parse
 
-class CreateChoreViewController: UIViewController {
+class CreateChoreViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet weak var dateField: UITextField!
     
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descText: UITextView!
     private var datePicker: UIDatePicker?
     
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +38,57 @@ class CreateChoreViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func onCameraButoon(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+        
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = image.af_imageScaled(to: size)
+        
+        imageView.image = scaledImage
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    @IBAction func onSubmit(_ sender: Any) {
+        let chore = PFObject(className: "Chores")
+        
+        chore["name"] = nameField.text
+        chore["owner"] = PFUser.current()!
+        chore["date"] = dateField.text
+        
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        chore["image"] = file
+        
+        chore.saveInBackground { (success, error) in
+            if success{
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
     
     
     func textViewDidBeginEditing(descText: UITextView) {
@@ -64,9 +119,7 @@ class CreateChoreViewController: UIViewController {
     }
     
     
-    @IBAction func homeScreen(_ sender: Any) {
-                self.performSegue(withIdentifier: "createToHome", sender: nil)
-    }
+
     
     /*
     // MARK: - Navigation
