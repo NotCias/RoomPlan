@@ -12,10 +12,14 @@ class CreateChoreViewController: UIViewController {
 
     @IBOutlet weak var dateField: UITextField!
     
+    @IBOutlet weak var descText: UITextView!
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        descText.layer.borderWidth = 1
+        descText.layer.borderColor = UIColor.lightGray.cgColor
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -32,6 +36,22 @@ class CreateChoreViewController: UIViewController {
     
     
     
+    func textViewDidBeginEditing(descText: UITextView) {
+        if descText.textColor == UIColor.lightGray {
+            descText.text = nil
+            descText.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(descText: UITextView) {
+        if descText.text.isEmpty {
+            descText.text = "Enter description here"
+            descText.textColor = UIColor.lightGray
+        }
+    }
+    
+    
+    
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
     }
@@ -44,7 +64,10 @@ class CreateChoreViewController: UIViewController {
     }
     
     
-
+    @IBAction func homeScreen(_ sender: Any) {
+                self.performSegue(withIdentifier: "createToHome", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
